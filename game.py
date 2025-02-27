@@ -2,7 +2,7 @@ from spider import *
 from fly import *
 import os 
 import time
-from graphics import GameVisualizer
+
 class Directions:
     NORTH = 'North'
     SOUTH = 'South'
@@ -236,7 +236,7 @@ class Game:
                 os.system('clear')
                 print("\nTime step",steps)
                 self.gameState.layout.printLayout()
-                time.sleep(self.speed)
+                #time.sleep(self.speed)
             
             agentIndex+=1
             agentIndex%=len(agentKeys)
@@ -260,5 +260,5 @@ if __name__=="__main__":
 
 
     game = Game(grid_size,spiders,flies,graphics=True,speed=0.1)
-    agent = Agents("Multiagent_rollout")
+    agent = Agents("base")
     print(game.run(agent.policy))
